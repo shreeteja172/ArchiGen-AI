@@ -1,10 +1,12 @@
 import { z } from "zod";
 
 export const umlSchema = z.object({
+  title: z.string(),
+
   classes: z.array(
     z.object({
       name: z.string(),
-      fields: z.array(z.string()),
+      attributes: z.array(z.string()),
       methods: z.array(z.string()),
     })
   ),
@@ -13,7 +15,12 @@ export const umlSchema = z.object({
     z.object({
       from: z.string(),
       to: z.string(),
-      type: z.enum(["inheritance", "association"]),
+      type: z.enum([
+        "association",
+        "inheritance",
+        "aggregation",
+        "composition",
+      ]),
     })
   ),
 });
