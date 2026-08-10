@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white flex flex-col items-center p-10">
-      <h1 className="text-5xl font-bold mb-3">UMLify AI</h1>
+      <h1 className="text-5xl font-bold mb-3">ArchiGen AI</h1>
 
       <p className="text-zinc-400 mb-8">
         Describe your software idea and generate a UML Class Diagram.
