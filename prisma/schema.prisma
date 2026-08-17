@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Diagram {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  idea      String
+  uml       Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, createdAt(sort: Desc)])
+}
